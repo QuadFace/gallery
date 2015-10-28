@@ -2,6 +2,8 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
+// app.register('.html', require('ejs'));
+
 function getImageList () {
 	var images = [];
 	fs.readdir(__dirname, function(err, files){
@@ -19,8 +21,10 @@ function getImageList () {
 
 }
 
+app.use(express.static(__dirname + '/'));
+
 app.get('/', function (req, res) {
-  res.get('Hello World!');
+  res.sendFile(__dirname + "/gallery.html");
 });
 
 var server = app.listen(3000, function(){
