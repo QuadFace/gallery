@@ -15,19 +15,6 @@ function getImageList () {
 	return images;
 }
 
-
-// function getImageList () {
-// 	var images = [];
-// 	fs.readdir(__dirname, function(err, files){
-// 		for(var index in files){
-// 			if (files[index].match(/\.(JPG|jpg|JPEG|jpeg|PNG|png|GIF|gif)/)) {
-// 				images.push(files[index]);
-// 			}
-// 		}
-// 		return images;
-// 	});
-// }
-
 app.use(express.static(__dirname + '/'));
 
 app.get('/', function (req, res) {
