@@ -2,7 +2,7 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
-// app.register('.html', require('ejs'));
+app.set('view engine', 'ejs');
 
 function getImageList () {
 	var images = [];
