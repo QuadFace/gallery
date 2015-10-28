@@ -1,0 +1,84 @@
+
+<html>
+	<head>
+		<title>
+			Quadface Gallery
+		</title>
+
+		<style type="text/css">
+			body {
+				background: #222;
+				margin-top: 20px;
+			}
+
+			h3 {
+				color: #eee;
+				font-family: Verdana;
+			}
+
+			.thumbnails img {
+				height: 80px;
+				border: 4px solid #555;
+				padding: 1px;
+				margin: 0 10px 10px 0;
+			}
+
+			.thumbnails img:hover {
+				border: 4px solid #00ccff;
+				cursor:pointer;
+			}
+
+			.preview img {
+				border: 4px solid #444;
+				padding: 1px;
+				width: 400px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="gallery" align="center">
+			<h3>Quadface Gallery</h3><br/>
+
+			<div class="thumbnails">
+				<img id="img1" src="IMG_1290.JPG" alt="Image Not Loaded"/>
+				<img id="img2" src="1.JPG" alt="Image Not Loaded"/>
+				<img id="img3" src="2.JPG" alt="Image Not Loaded"/>
+				<img id="img4" src="IMG_1375.JPG" alt="Image Not Loaded"/>
+				<img id="img5" src="IMG_1378.JPG" alt="Image Not Loaded"/>
+				<img id="img6" src="IMG_1417.JPG" alt="Image Not Loaded"/>
+			</div><br/>
+
+			<div class="preview" align="center">
+				<img id="preview" src="" alt="No Image Loaded"/>
+			</div><br/>
+		</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<script type="text/javascript">
+
+		$(".thumbnails img").hover(function(e){
+			console.log($(this).attr("src"));
+
+			var originalImgSrc = $(this).attr("src");
+			$("#preview").attr("src",originalImgSrc);
+
+
+		}, function(e){
+			$("#preview").attr("src","");
+		});
+
+
+
+		$().hover(function(){
+
+		}, function(){
+
+		})
+
+
+
+
+		</script>
+
+	</body>
+</html>
