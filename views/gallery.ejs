@@ -39,14 +39,10 @@
 	<body>
 		<div class="gallery" align="center">
 			<h3>Quadface Gallery</h3><br/>
-
 			<div class="thumbnails">
-				<img id="img1" src="IMG_1290.JPG" alt="Image Not Loaded"/>
-				<img id="img2" src="1.JPG" alt="Image Not Loaded"/>
-				<img id="img3" src="2.JPG" alt="Image Not Loaded"/>
-				<img id="img4" src="IMG_1375.JPG" alt="Image Not Loaded"/>
-				<img id="img5" src="IMG_1378.JPG" alt="Image Not Loaded"/>
-				<img id="img6" src="IMG_1417.JPG" alt="Image Not Loaded"/>
+			<% for(index in locals.images) {%>
+				<img src=<%= images[index] %>>
+			<% } %>
 			</div><br/>
 
 			<div class="preview" align="center">

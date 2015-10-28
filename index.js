@@ -5,26 +5,34 @@ var app = express();
 app.set('view engine', 'ejs');
 
 function getImageList () {
+	var tempImages = fs.readdirSync(__dirname);
 	var images = [];
-	fs.readdir(__dirname, function(err, files){
-		for(var index in files){
-			if (files[index].match(/\.(JPG|jpg|JPEG|jpeg|PNG|png|GIF|gif)/)) {
-				images.push(files[index]);
-			}
+	for(var index in tempImages){
+		if (tempImages[index].match(/\.(JPG|jpg|JPEG|jpeg|PNG|png|GIF|gif)/)) {
+			images.push(tempImages[index]);
 		}
-
-		console.log(images);
-
-	});
-
+	}
 	return images;
-
 }
+
+
+// function getImageList () {
+// 	var images = [];
+// 	fs.readdir(__dirname, function(err, files){
+// 		for(var index in files){
+// 			if (files[index].match(/\.(JPG|jpg|JPEG|jpeg|PNG|png|GIF|gif)/)) {
+// 				images.push(files[index]);
+// 			}
+// 		}
+// 		return images;
+// 	});
+// }
 
 app.use(express.static(__dirname + '/'));
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + "/gallery.html");
+	res.locals.images = getImageList();
+	res.render("gallery");
 });
 
 var server = app.listen(3000, function(){
