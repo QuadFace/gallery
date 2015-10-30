@@ -6,7 +6,8 @@
     "express": "^4.13.3"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha"
   },
   "devDependencies": {
     "should": "^7.1.1"

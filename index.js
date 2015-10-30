@@ -2,9 +2,11 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
+var exports = module.exports = {};
+
 app.set('view engine', 'ejs');
 
-function getImageList () {
+exports.getImageList = function() {
 	var tempImages = fs.readdirSync(__dirname);
 	var images = [];
 	for(var index in tempImages){
