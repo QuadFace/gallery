@@ -1,3 +1,10 @@
 language: node_js
 node_js:
-        - "node"
+- node
+deploy:
+  provider: heroku
+  api_key:
+    secure: XT03btFsS07PcWdxhusfwsWBkSBNDLuwoikisQf2Z3RBEiuSkQpPqWO6ri6vEKBQ7/piDF49MKvBoOei94MtMULMUISymVZHoZJIQqIddeiHyFQzjCz3YQ1VbC9eEIMSQ18qk+CQLjPJQ3WDD2XjcE6VJ5bOgiAoMGeLvXsp0fxGXFSCvlKr/z9bP6rSSb1f6WADfz3z+pvNu7V1xfspyxtjGTunoYSD2jngiSArDVf32r90WxVPGhouMU6OvgFXvTpvuCbGfv2SUcJpmsoqGjIiDllzfpkU/uDC68I2f6xglH7RRXEXIZWcRZqfdxbV3zKWJQT7+YKXahuKRtct6A4zkrxvdD2mdmdx5SIJhWqtXZaotXSnlRb+Qz2h3x0PrY6wEJKnhizqx0oJCqv/Pyn2H3Og7jPTDfuZy52NzTyCgXpY9W7EFX++xv8jr3Lsi2aqnbjinXUE6gHz77PNCMZQJaYENNNaY6TtumFcinyGS7wAtPlnV/ItxrQhKls9pxNdspxuEcyjJ5vjbo2LA6lyi5UOB1hr1XPp0IWu5CmfQEbw+Bs+ZsDIhJv5zxPpHPFmx/EB3HQR0i6M2U+9kwFnuZLlu0QgwSm24uONRk+dIaPqCI2x7CqdxIE4ZmY46saomegF+4cpPOyLeUJTwRlsY3YDhbKKv4Uy/MZ0LIw=
+  app: quadface
+  on:
+    repo: QuadFace/project-site
