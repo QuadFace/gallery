@@ -6,7 +6,7 @@ var exports = module.exports = {};
 
 app.set('view engine', 'ejs');
 
-exports.getImageList = function() {
+function getImageList() {
 	var tempImages = fs.readdirSync(__dirname);
 	var images = [];
 	for(var index in tempImages){
@@ -16,6 +16,8 @@ exports.getImageList = function() {
 	}
 	return images;
 }
+
+exports.getImageList = getImageList;
 
 app.use(express.static(__dirname + '/'));
 
